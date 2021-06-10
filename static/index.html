@@ -1,0 +1,28 @@
+{{ define "index" }}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Links</title>
+		<meta name="title" content="Links">
+		<meta name="description" content="Links Website">
+		<link rel="stylesheet" href="/static/styles.css">
+	</head>
+	<body>
+		{{ range $i, $link := .Links }}
+		<a 
+			href="{{ $link.URL }}" 
+			class="listlink" 
+			data-date="{{ $link.PrettyTime }}" 
+			data-comment="{{ $link.Comment }}" 
+			data-author="{{ $link.Author }}"
+			data-tags="{{ $link.PrettyTags }}">
+			{{ $link.Title }}
+		</a>
+		{{ end }}
+		<div id="details"></div>
+		<script src="/static/links.js"></script>
+	</body>
+</html>
+{{ end }}

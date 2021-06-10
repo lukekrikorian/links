@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>New Link</title>
+		<link rel="stylesheet" href="/static/styles.css">
+	</head>
+	<body>
+		<form action="/upload/new" method="POST">
+			<fieldset>
+				<legend>About the Work</legend>
+				<input type="text" name="url" placeholder="URL" required>
+				<button type="button">Scan</button>
+				<br>
+				<input type="text" name="title" placeholder="Title" required>
+				<br>
+				<input type="text" name="author" placeholder="Author">
+			</fieldset>
+			<fieldset>
+				<legend>Metadata</legend>
+				<input type="text" name="tags" placeholder="Tags" pattern="(\w+)(,\s*\w+)*" required>
+				<br>
+				<input list="work-types" name="type" placeholder="Type" required>
+				<br>
+				<textarea name="comment" placeholder="Comment" rows="5" cols="30"></textarea>
+				<br>
+			</fieldset>
+			<input class="link" type="submit" value="Submit ↗">
+		</form>
+
+		<datalist id="work-types">
+			<option value="video">
+			<option value="pdf">
+			<option value="webpage">
+			<option value="article">
+			<option value="film">
+			<option value="image">
+			<option value="audio">
+			<option value="repository">
+			<option value="text">
+			<option value="document">
+		</datalist>
+
+		<script src="/static/upload.js"></script>
+	</body>
+</html>

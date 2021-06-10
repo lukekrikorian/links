@@ -1,0 +1,5 @@
+*.swp
+output.log
+static/config.json
+.DS_Store
+links

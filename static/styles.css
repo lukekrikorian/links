@@ -1,0 +1,87 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir,
+	helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial,
+	sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	color: #FFE;
+	background: #001;
+}
+.listlink, #details, .link {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+.listlink {
+	color: #FFE;
+	text-decoration: none;
+	display: block;
+	margin: 10px 0px -8px 10px;
+}
+.tags {
+	font-size: 1rem;
+}
+#details {
+	color: #001;
+	width: 100%;
+	padding: 10px;
+	background: #FFE;
+	max-width: 450px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	display: none;
+}
+.comment {
+	font-size: 1.1rem;
+	margin-top: 0.8rem;
+}
+.link {
+	color: blue;
+	display: block;
+	text-decoration: none;
+}
+.date {
+	color: #333;
+	margin-top: 5px;
+	font-size: 0.9rem;
+}
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+form > * {
+	margin: 10px;
+}
+fieldset > * {
+	margin-bottom: 10px;
+}
+input, textarea {
+    margin-bottom: 4px;
+	padding: 4px;
+    background: none;
+	color: #FFE;
+    border: none;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #FFE;
+    font-size: 0.85rem;
+}
+input[type=submit] {
+	color: #FFE;
+	background: none;
+	border: none;
+	font-size: 1rem;
+	padding: 0;
+}
+button {
+    color: #FFE;
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+}
+
+
