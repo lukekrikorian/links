@@ -1,0 +1,4 @@
+{
+	"DatabaseURL": "postgres://luke@localhost:5432/links",
+	"Port": 8080
+}
