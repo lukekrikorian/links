@@ -2,7 +2,7 @@ var links = document.querySelectorAll("a")
 var details = document.getElementById("details")
 
 function getData(element, attribute) {
-	return element.getAttribute("data-" + attribute);
+	return element.getAttribute("data-" + attribute)
 }
 
 links.forEach(function(link){
@@ -34,7 +34,9 @@ links.forEach(function(link){
 		details.innerText = ""
 		details.appendChild(linkElement)
 		details.appendChild(tagsElement)
-		details.appendChild(commentElement)
+		if (comment.length < 0) {
+			details.appendChild(commentElement)
+		}
 
 		details.style.display = "block"
 	})
