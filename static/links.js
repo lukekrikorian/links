@@ -34,7 +34,7 @@ links.forEach(function(link){
 		details.innerText = ""
 		details.appendChild(linkElement)
 		details.appendChild(tagsElement)
-		if (comment.length < 0) {
+		if (comment.length > 0) {
 			details.appendChild(commentElement)
 		}
 
