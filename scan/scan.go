@@ -10,6 +10,7 @@ import (
 )
 
 type ScanInfo struct {
+	URL     string   `json:"url"`
 	Type    string   `json:"type"`
 	Author  string   `json:"author"`
 	Title   string   `json:"title"`
@@ -17,9 +18,25 @@ type ScanInfo struct {
 	Comment string   `json:"comment"`
 }
 
+var overrides = map[string]string{
+	"www.youtube.com":   "video",
+	"www.wikipedia.org": "article",
+	"github.com":        "repository",
+	"music.apple.com":   "audio",
+	"open.spotify.com":  "audio",
+}
+
 func scan(r *http.Response) ScanInfo {
-	info := ScanInfo{Type: "webpage"}
 	defer r.Body.Close()
+
+	info := ScanInfo{
+		URL:  r.Request.URL.String(),
+		Type: "webpage",
+	}
+
+	if override, ok := overrides[r.Request.URL.Hostname()]; ok {
+		info.Type = override
+	}
 
 	doc, err := goquery.NewDocumentFromReader(r.Body)
 	if err != nil {

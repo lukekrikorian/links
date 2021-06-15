@@ -6,7 +6,7 @@ function reducer(curr, key) {
 	return curr
 }
 
-var elements = ["title", "author", "tags", "type", "comment"].reduce(reducer, {})
+var elements = ["url", "title", "author", "tags", "type", "comment"].reduce(reducer, {})
 
 scanButton.addEventListener("click", function(){
 	var url = urlElement.value;
@@ -18,7 +18,11 @@ scanButton.addEventListener("click", function(){
 		if (this.status === 200) {
 			var data = JSON.parse(this.responseText)
 			for (var key in data) {
-				elements[key].value = data[key] 
+				try {
+					elements[key].value = data[key]
+				} catch(e) {
+					console.log(e, key)
+				}
 			}
 		}
 	});
